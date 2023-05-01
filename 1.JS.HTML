@@ -1,0 +1,15 @@
+function displayWeatherInfo(data) {
+  const temperature = data.main.temp;
+  const humidity = data.main.humidity;
+  const windSpeed = data.wind.speed;
+  const weatherDescription = data.weather[0].description;
+  const weatherIcon = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+
+  const weatherHTML = `
+    <div>
+      <h2>Current Weather in ${data.name}</h2>
+      <img src="${weatherIcon}" alt="${weatherDescription}" />
+      <p>Temperature: ${temperature} K</p>
+      <p>Humidity: ${humidity} %</p>
+      <p>Wind Speed: ${windSpeed} m/s</p>
+      <p>Weather
